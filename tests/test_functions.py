@@ -56,6 +56,9 @@ def test_time():
     numbers_multiplication(nums2)
     time2_end = time.time() - time2_start
 
+    os.remove('file1.txt')
+    os.remove('file2.txt')
+
     assert time2_end > time1_end
 
 
