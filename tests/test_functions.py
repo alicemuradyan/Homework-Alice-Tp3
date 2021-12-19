@@ -26,6 +26,14 @@ def test_numbers_multiplication():
     assert numbers_multiplication(random_mas) == math.prod(random_mas)
 
 
+def test_file_reader():
+    file = open('file.txt', 'w')
+    file.write('1 2.2 abc')
+    file.close()
+    assert file_reader('file') == -1
+    os.remove('file.txt')
+
+
 if __name__ == '__main__':
     pytest.main()
 

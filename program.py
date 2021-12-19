@@ -6,19 +6,19 @@ def file_reader(name):
     except IOError:
         return -2
 
-    nums = []
-    for i in file.read().split():
-        nums.append(float(i))
-    file.close()
+    text = file.read().split()
 
-    if not nums:
+    if not text:
         return 0
 
-    for i in nums:
+    nums = []
+    for i in text:
         try:
-            x = int(i)
+            nums.append(float(i))
         except ValueError:
             return -1
+
+    file.close()
 
     return nums
 
